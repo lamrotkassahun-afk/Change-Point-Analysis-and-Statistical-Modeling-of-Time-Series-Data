@@ -1,2 +1,14 @@
 # Change-Point-Analysis-and-Statistical-Modeling-of-Time-Series-Data
 Detecting changes and associating causes on time series data
+To finalize Task 1: Laying the Foundation for Analysis, your README.md should serve as the central documentation for your project’s structure, workflow, and initial findings.As per the challenge document, the primary objective of this stage is to define the data analysis workflow and develop a thorough understanding of the model and data.Below is the content you should put in your README.md file, organized to meet the project's requirements.Change Point Analysis of Brent Oil PricesBirhan Energies - Data Science Challenge (Week 11)📌 Project OverviewThis project focuses on analyzing how significant political and economic events—such as conflicts, OPEC policy changes, and global economic shocks—impact Brent crude oil prices. We utilize Bayesian Change Point Analysis to detect structural breaks in time-series data and quantify the impact of these events on global energy markets.+2🛠 Project StructurePlaintext├── data/
+│   ├── raw/                # Original Brent oil price dataset (1987-2022) [cite: 25]
+│   └── external/           # event_data.csv (Compiled geopolitical events) [cite: 65]
+├── notebooks/
+│   └── task-1_eda.ipynb    # Exploratory Data Analysis and statistical testing [cite: 115]
+├── src/
+│   ├── data_loader.py      # Script for data ingestion and cleaning 
+│   └── statistical_tests.py # Script for stationarity and volatility testing [cite: 71]
+├── docs/
+│   └── interim_report.pdf  # Task 1 Summary, Assumptions, and Methodology [cite: 82]
+└── README.md               # Project documentation
+📈 Task 1: Foundation for Analysis1. Data Analysis WorkflowThe established workflow for this project includes:Data Loading: Ingesting daily Brent oil prices and converting formats.EDA: Visualizing price trends and identifying periods of high volatility.Statistical Testing: Checking for stationarity (ADF Test) and volatility clustering (Log Returns).Bayesian Modeling: Defining switch points ($\tau$) and MCMC sampling using PyMC.+1Causal Association: Comparing detected change points with historical event data.2. Time Series PropertiesInitial investigations of the Brent oil price data revealed:Trend: The data is non-linear with significant structural shifts over the decades.Stationarity: ADF testing confirmed the raw series is non-stationary, necessitating the use of log returns for stable modeling.+1Volatility: Significant clustering exists around major global events like the Gulf War and COVID-19.+13. Assumptions and LimitationsDistribution: We assume log returns follow a Normal distribution for likelihood modeling.Causality: Statistical change points indicate correlation in time; causal impact must be validated against external qualitative research.Change Point Nature: The model assumes discrete structural breaks rather than gradual transitions.
