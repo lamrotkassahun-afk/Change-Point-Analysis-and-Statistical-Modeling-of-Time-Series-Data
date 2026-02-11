@@ -12,3 +12,34 @@ To finalize Task 1: Laying the Foundation for Analysis, your README.md should se
 │   └── interim_report.pdf  # Task 1 Summary, Assumptions, and Methodology [cite: 82]
 └── README.md               # Project documentation
 📈 Task 1: Foundation for Analysis1. Data Analysis WorkflowThe established workflow for this project includes:Data Loading: Ingesting daily Brent oil prices and converting formats.EDA: Visualizing price trends and identifying periods of high volatility.Statistical Testing: Checking for stationarity (ADF Test) and volatility clustering (Log Returns).Bayesian Modeling: Defining switch points ($\tau$) and MCMC sampling using PyMC.+1Causal Association: Comparing detected change points with historical event data.2. Time Series PropertiesInitial investigations of the Brent oil price data revealed:Trend: The data is non-linear with significant structural shifts over the decades.Stationarity: ADF testing confirmed the raw series is non-stationary, necessitating the use of log returns for stable modeling.+1Volatility: Significant clustering exists around major global events like the Gulf War and COVID-19.+13. Assumptions and LimitationsDistribution: We assume log returns follow a Normal distribution for likelihood modeling.Causality: Statistical change points indicate correlation in time; causal impact must be validated against external qualitative research.Change Point Nature: The model assumes discrete structural breaks rather than gradual transitions.
+# Brent Oil Price Analysis & Interactive Dashboard
+
+## 📌 Project Overview
+This project provides a comprehensive analysis of Brent Crude Oil prices (1987-2022). It focuses on identifying **structural change points** in time-series data and correlating them with major global geopolitical and economic events.
+
+The final output is an interactive full-stack dashboard built with **React** and **Flask**, allowing users to visualize regime shifts and their quantified impacts.
+
+## 🚀 Features
+- **Statistical Modeling:** Automated change-point detection using PELT and Binary Segmentation.
+- **Interactive Visualizations:** Time-series charts with event markers built using `Recharts`.
+- **RESTful API:** A Flask-based backend serving processed historical data.
+- **Quantified Impact:** A summary table detailing the price impact of identified historical events.
+
+## 🛠️ Tech Stack
+- **Frontend:** React.js, Recharts, Axios
+- **Backend:** Flask, Flask-CORS
+- **Analysis:** Python (Pandas, NumPy, Matplotlib)
+- **Environment:** Node.js, Python 3.x
+
+## 📂 Project Structure
+```text
+├── backend/
+│   ├── app.py             # Flask API server
+│   ├── data/
+│   │   └── raw/           # Historical CSV datasets
+│   └── requirements.txt   # Python dependencies
+├── frontend/
+│   ├── src/               # React source code (App.js, Index.js)
+│   ├── public/            # HTML templates
+│   └── package.json       # Node dependencies
+└── README.md
